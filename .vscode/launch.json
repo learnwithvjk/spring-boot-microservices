@@ -17,6 +17,13 @@
             "request": "launch",
             "mainClass": "com.learnwithvjk.orderservice.OrderServiceApplication",
             "projectName": "order-service"
+        },
+        {
+            "type": "java",
+            "name": "InventoryServiceApplication",
+            "request": "launch",
+            "mainClass": "com.learnwithvjk.inventoryservice.InventoryServiceApplication",
+            "projectName": "inventory-service"
         }
     ]
 }
