@@ -10,6 +10,13 @@
             "request": "launch",
             "mainClass": "com.learnwithvjk.productservice.ProductServiceApplication",
             "projectName": "product-service"
+        },
+        {
+            "type": "java",
+            "name": "OrderServiceApplication",
+            "request": "launch",
+            "mainClass": "com.learnwithvjk.orderservice.OrderServiceApplication",
+            "projectName": "order-service"
         }
     ]
 }
