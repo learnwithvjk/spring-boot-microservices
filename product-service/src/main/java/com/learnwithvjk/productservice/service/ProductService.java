@@ -1,8 +1,11 @@
 package com.learnwithvjk.productservice.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.learnwithvjk.productservice.dto.ProductRequest;
+import com.learnwithvjk.productservice.dto.ProductResponse;
 import com.learnwithvjk.productservice.model.Product;
 import com.learnwithvjk.productservice.repository.ProductRepository;
 
@@ -24,6 +27,21 @@ public class ProductService {
 
         productRepository.save(product);
         log.info("product {} is saved", product.getId());
+    }
+
+    public List<ProductResponse> getProducts() {
+        List<Product> products = productRepository.findAll();
+
+        return products.stream().map(this::mapProductToProductResponse).toList();
+    }
+
+    private ProductResponse mapProductToProductResponse(Product product) {
+        return ProductResponse.builder()
+                .name(product.getName())
+                .description(product.getDescription())
+                .price(product.getPrice())
+                .build();
+
     }
 
 }
